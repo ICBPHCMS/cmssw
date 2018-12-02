@@ -445,7 +445,7 @@ bool BToKmumuProducer::MuMuVertexRefitting(const pat::Muon & muon1,
     const reco::TransientTrack muon2TT = theTTBuilder->build(muon2.innerTrack());
     
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
     
     std::vector<RefCountedKinematicParticle> muonParticles;
     double chi = 0.;
@@ -493,7 +493,7 @@ bool BToKmumuProducer::BToKMuMuVertexRefitting(const pat::Muon &muon1,
     const reco::TransientTrack kaonTT = theTTBuilder->build(kaon.bestTrack());
 
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
 
     std::vector<RefCountedKinematicParticle> BToKMuMuParticles;
     double chi = 0.;
@@ -544,7 +544,7 @@ bool BToKmumuProducer::BToKJPsiMuMuVertexRefitting(const RefCountedKinematicPart
   const reco::TransientTrack kaonTT = theTTBuilder->build(kaon.bestTrack());
 
   KinematicParticleFactoryFromTransientTrack partFactory;
-  KinematicParticleVertexFitter PartVtxFitter;
+  KinematicConstrainedVertexFitter PartVtxFitter;
 
   std::vector<RefCountedKinematicParticle> BToKMuMuParticles;
   double chi = 0.;

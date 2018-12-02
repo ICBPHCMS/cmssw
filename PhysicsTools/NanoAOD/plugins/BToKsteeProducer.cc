@@ -643,7 +643,7 @@ bool BToKsteeProducer::EEVertexRefitting(const pat::Electron & ele1,
     const reco::TransientTrack ele2TT = theTTBuilder->build(ele2.gsfTrack());
     
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
     
     std::vector<RefCountedKinematicParticle> eleParticles;
     double chi = 0.;
@@ -688,7 +688,7 @@ bool BToKsteeProducer::KstVertexRefitting(const pat::PackedCandidate &kaon,
     const reco::TransientTrack pionTT = theTTBuilder->build(pion.bestTrack());
 
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
     
     std::vector<RefCountedKinematicParticle> KstParticles;
     double chi = 0.;
@@ -740,7 +740,7 @@ bool BToKsteeProducer::BToKstEEVertexRefitting(const pat::Electron &ele1,
     const reco::TransientTrack ele2TTel = theTTBuilder->buildfromGSF(ele2.gsfTrack(), math::XYZVector(ele2.momentum()), ele2.charge());
 
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
 
     float Kst_mass = refitKPi->currentState().mass();
     float Kst_mass_err = sqrt(refitKPi->currentState().kinematicParametersError().matrix()(6,6));
@@ -818,7 +818,7 @@ bool BToKsteeProducer::BToKPiEEVertexRefitting(const pat::Electron &ele1,
     const reco::TransientTrack pionTT = theTTBuilder->build(pion.bestTrack());
 
     KinematicParticleFactoryFromTransientTrack partFactory;
-    KinematicParticleVertexFitter PartVtxFitter;
+    KinematicConstrainedVertexFitter PartVtxFitter;
 
     std::vector<RefCountedKinematicParticle> BToKPiEEParticles;
     double chi = 0.;
@@ -872,7 +872,7 @@ bool BToKsteeProducer::BToKstJPsiEEVertexRefitting(const RefCountedKinematicPart
   const reco::TransientTrack KPiTT = refitKPi->refittedTransientTrack();
 
   KinematicParticleFactoryFromTransientTrack partFactory;
-  KinematicParticleVertexFitter PartVtxFitter;
+  KinematicConstrainedVertexFitter PartVtxFitter;
 
   std::vector<RefCountedKinematicParticle> BToKstEEParticles;
   double chi = 0.;
